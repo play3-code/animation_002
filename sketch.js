@@ -67,9 +67,17 @@ function drawTrees() {
       let x = map(lon, bounds.left, bounds.right, 0, width);
       let y = map(lat, bounds.top, bounds.bottom, 0, height);
 
+      let age = currentYear - treeObject.properties.PFLANZJAHR;
+
+      let r = age * 1.3;
+
       fill(0);
       noStroke();
-      ellipse(x, y, 3, 3);
+      ellipse(x, y, 1, 1);
+
+      stroke(0, 20);
+      noFill();
+      ellipse(x, y, r, r);
     }
   }
 }
